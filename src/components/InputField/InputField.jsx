@@ -5,7 +5,7 @@ import s from './InputField.module.css';
 const InputField = ({children, ...other}) => {
   const {label, value, onChange, type, name, pattern, title, required = false} = other;
   return (
-    <p className={s.fieldWrapper}>
+    <p>
       <label className={s.field}>
         <span className={s.label}>{label}</span>
         <input

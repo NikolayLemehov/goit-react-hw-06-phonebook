@@ -14,20 +14,20 @@ export default function App() {
   const contacts = useSelector(state => state.phonebook.contacts.items)
 // const filter = useSelector(state => state.contacts.filter)
 //   const [contacts, setContacts] = useState([]);
-  const didRender = useRef(false);
+//   const didRender = useRef(false);
   // useEffect(() => {
   //   let localContacts = localStorage.getItem(LOCAL_KEY);
   //   localContacts = localContacts ? JSON.parse(localContacts) : [];
   //   setContacts([...localContacts]);
   // }, []);
 
-  useEffect(() => {
-    if (!didRender.current) {
-      didRender.current = true;
-      return;
-    }
-    window.localStorage.setItem(LOCAL_KEY, JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   if (!didRender.current) {
+  //     didRender.current = true;
+  //     return;
+  //   }
+  //   // window.localStorage.setItem(LOCAL_KEY, JSON.stringify(contacts));
+  // }, [contacts]);
 
   const onGetDataForm = (data) => {
     const hasName = contacts.some(it => it.name === data.name);
@@ -40,6 +40,7 @@ export default function App() {
   };
 
   const deleteItem = (deletedId) => {
+    console.log(deletedId)
     dispatch(removeContactById(deletedId))
   };
 

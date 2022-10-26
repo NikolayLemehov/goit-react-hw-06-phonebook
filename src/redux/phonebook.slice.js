@@ -17,7 +17,7 @@ export const phonebookSlice = createSlice({
       state.contacts.items.push(action.payload);
     },
     removeContactById: (state, action) => {
-      state.contacts.items = state.items.filter(it => it.id === action.payload);
+      state.contacts.items = state.contacts.items.filter(it => it.id !== action.payload);
     },
     setFilterValue: (state, action) => {
       state.contacts.filter = action.payload;
